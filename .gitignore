@@ -28,3 +28,9 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+
+# .gitignore
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.backup

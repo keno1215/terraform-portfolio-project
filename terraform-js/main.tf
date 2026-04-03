@@ -42,6 +42,10 @@ resource "aws_s3_bucket_acl" "nextjs_bucket_acl" {
 resource "aws_s3_bucket_policy" "nextjs_bucket_policy" {
     bucket = aws_s3_bucket.nextjs_bucket.id
 
+    depends_on = [ 
+        aws_s3_bucket_public_access_block.nextjs_bucket_public_access_block
+     ]
+
     policy = jsonencode({
         Version = "2012-10-17"
         Statement = [
